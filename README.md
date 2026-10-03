@@ -22,7 +22,7 @@ Barre de recherche ──► saisie du mot-clé ──► clic "Personnes"
           ARRÊT
 ```
 
-1. Compte à rebours : place ta souris sur la barre de recherche, sa position est mémorisée.
+1. Compte à rebours : place ta souris sur la barre de recherche, sa position est mémorisée. 
 2. Le script saisit le mot-clé (`RECHERCHE`) et valide.
 3. Il clique sur le filtre **Personnes**.
 4. Sur chaque page : clic sur **Se connecter** puis **Envoyer sans note**, jusqu'à ce qu'il n'y en ait plus (en scrollant).
