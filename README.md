@@ -22,7 +22,7 @@ Barre de recherche ──► saisie du mot-clé ──► clic "Personnes"
           ARRÊT
 ```
 
-1. Compte à rebours : place ta souris sur la barre de recherche, sa position est mémorisée. 
+1. Compte à rebours : place ta souris sur la barre de recherche, sa position est mémorisée.
 2. Le script saisit le mot-clé (`RECHERCHE`) et valide.
 3. Il clique sur le filtre **Personnes**.
 4. Sur chaque page : clic sur **Se connecter** puis **Envoyer sans note**, jusqu'à ce qu'il n'y en ait plus (en scrollant).
@@ -75,6 +75,7 @@ Paramètres en haut de `auto_connexions.py` :
 | `DELAI_CALIBRAGE` | `5` | Temps pour placer la souris (s) |
 | `LANG` | `"fra+eng"` | Langues OCR |
 | `UPSCALE` | `2` | Agrandissement de la capture pour l'OCR |
+| `SCROLL` | `500` | Amplitude d'un coup de molette |
 
 ## Dépannage
 
@@ -82,14 +83,15 @@ Paramètres en haut de `auto_connexions.py` :
 |---|---|
 | Un bouton n'est pas détecté | Monter `UPSCALE` à 3, ou zoomer le navigateur à 110–125 % |
 | Clic décalé | Vérifier la mise à l'échelle Windows ; le script gère Retina |
-| `TesseractNotFoundError` | Installer Tesseract ou renseigner `tesseract_cmd` |
+| `Tesseract introuvable` | Tesseract est un **programme**, pas un paquet pip : installer via UB Mannheim (ne pas faire `pip install tesseract`), ou renseigner `TESSERACT_CMD` |
+| `No module named 'pyautogui'` alors qu'il est installé | Le script tourne avec un autre Python que celui de l'environnement virtuel : activer le venv puis lancer `python auto_connexions.py` (dans VS Code : *Python: Select Interpreter* → le venv) |
 | Popup sans « Envoyer sans note » | Normal (email demandé…) : fermée avec Échap, le script continue |
 
 ## Stack
 
 - [`pyautogui`](https://pyautogui.readthedocs.io/) — contrôle souris/clavier et captures d'écran
 - [`pytesseract`](https://github.com/madmaze/pytesseract) — OCR pour localiser les boutons
-- [`Pillow`](https://python-pillow.org/) — traitement d'image
+- [`Pillow`](https://python-pillow.org/) et [`numpy`](https://numpy.org/) — prétraitement des captures (isolation des couleurs LinkedIn)
 
 ## Feuille de route
 
