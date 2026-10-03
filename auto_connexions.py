@@ -33,7 +33,7 @@ UPSCALE = 2                 # agrandissement de la capture -> meilleur OCR
 # ====================================================================
 
 pyautogui.FAILSAFE = True
-pyautogui.PAUSE = 0.5
+pyautogui.PAUSE = 0.3
 MAC = sys.platform == "darwin"
 
 
